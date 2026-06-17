@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Utilisateur - Hadj 2026</title>
+    <link rel="icon" type="image/png" href="images.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard">
+
+<nav class="topbar">
+    <div class="logo">🎯 Tirage Hadj</div>
+
+    <div class="menu">
+        <button onclick="showSection('info')">Informations</button>
+        <button onclick="showSection('notif')">Notifications <span id="notif-badge"></span></button>
+        <button onclick="showSection('result')">Résultats</button>
+        <button onclick="showSection('draw')">Tirage</button>
+        <button onclick="showSection('rules')">Règles</button>
+    </div>
+
+    <div>
+        <a href="index.html" style="color:white;">Déconnexion</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div id="info" class="section active">
+        <div class="card">
+            <h2>ℹ Informations</h2>
+            <p>Bienvenue sur votre plateforme de tirage au sort pour la saison 2026.</p>
+        </div>
+    </div>
+
+    <div id="notif" class="section">
+        <div class="card">
+            <h2>🔔 Notifications</h2>
+            <div id="notif-list">
+                <p>Chargement des messages...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="result" class="section">
+        <div class="card">
+            <h2>📊 Résultats</h2>
+            <div id="user-status">
+                <p>Les résultats seront affichés ici après le tirage officiel.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="draw" class="section">
+        <div class="card">
+            <h2>🎯 Tirage</h2>
+            <p>Le bouton d'inscription s'activera dès l'ouverture par l'administrateur.</p>
+            <button id="btn-participer" disabled>S'inscrire au tirage</button>
+        </div>
+    </div>
+
+    <div id="rules" class="section">
+        <div class="card">
+            <h2>📌 Règles</h2>
+            <p>Conditions d'éligibilité : avoir 19 ans révolus, ne pas avoir gagné durant les 5 dernières années.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Fonction pour changer de section
+function showSection(id){
+    let sections = document.querySelectorAll(".section");
+    sections.forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    
+    // Si on clique sur notification, on enlève le badge
+    if(id === 'notif') document.getElementById('notif-badge').innerText = "";
+}
+
+// SIMULATION DES NOTIFICATIONS 
+document.addEventListener('DOMContentLoaded', () => {
+    const notifList = document.getElementById('notif-list');
+    const badge = document.getElementById('notif-badge');
+
+  
+    const notifications = [
+        { type: "Ouverture", msg: "📢 Les inscriptions sont désormais ouvertes ! Vous avez jusqu'au 30 mai.", date: "15/04/2026" },
+        { type: "Date", msg: "📅 La date officielle du tirage est fixée au 15 Juin 2026.", date: "18/04/2026" },
+        { type: "Resultat", msg: "🏆 Le tirage a été effectué. Consultez l'onglet 'Résultats'.", date: "20/04/2026" }
+    ];
+
+    // Affichage des notifications
+    notifList.innerHTML = "";
+    notifications.forEach(n => {
+        notifList.innerHTML += `
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 0;">
+                <small style="color: #38bdf8;">${n.date}</small>
+                <p style="margin: 5px 0;">${n.msg}</p>
+            </div>
+        `;
+    });
+
+    // On met un petit badge rouge s'il y a des nouvelles notifs
+    if(notifications.length > 0) {
+        badge.innerText = " (" + notifications.length + ")";
+        badge.style.color = "#ff4d4d";
+    }
+});
+</script>
+
+</body>
+</html>

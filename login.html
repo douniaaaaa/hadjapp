@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Tirage au Sort</title>
+    <link rel="icon" type="image/png" href="images.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<a href="index.html" class="back-link">← Accueil</a>
+
+<div class="login-card">
+
+    <!-- GAUCHE -->
+    <div class="login-left">
+        <div class="welcome-msg">
+            <h2>BIENVENUE</h2>
+            <p>Connectez-vous pour accéder à votre espace tirage au sort.</p>
+        </div>
+    </div>
+
+    <!-- DROITE -->
+    <div class="login-right">
+
+        <h3>Connexion</h3>
+
+        <!-- INPUTS JS -->
+        <input type="email" id="email" placeholder="Email"><br><br>
+        <input type="password" id="password" placeholder="Mot de passe"><br><br>
+        <p class="forgot-password">
+    <a href="forgot-password.html">Mot de passe oublié ?</a>
+</p>
+
+        <button type="button" class="btn-login" onclick="login()">
+            Se connecter
+        </button>
+
+        <p id="error" style="color:red;"></p>
+
+        <p class="register-link">
+            Pas encore de compte ? <a href="register.html">S'inscrire</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+function login() {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    error.textContent = "";
+
+    // Champs vides
+    if(email === "" || password === ""){
+        error.textContent = "⚠ Tous les champs sont obligatoires";
+        return;
+    }
+
+    // ADMIN
+    if(email === "admin@gmail.com" && password === "1234"){
+        window.location.href = "admin.html";
+        return;
+    }
+
+    // USER
+    if(password.length >= 4){
+        window.location.href = "user.html";
+        return;
+    }
+
+    error.textContent = "❌ Email ou mot de passe invalide";
+}
+</script>
+
+</body>
+</html>

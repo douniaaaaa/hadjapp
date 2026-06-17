@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Tirage au Sort</title>
+    <link rel="icon" type="image/x-icon" href="images.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="register-body">
+<a href="index.html" class="back-link">← Accueil</a>
+    <div class="register-card">
+        <div class="register-left">
+            <div class="welcome-msg">
+                <h2>BIENVENUE</h2>
+                <p>Inscrivez-vous pour participer au prochain tirage au sort.</p>
+            </div>
+        </div>
+
+        <div class="register-right">
+            <form action="#" method="POST">
+                <h3>Créer un compte</h3>
+                
+                <div class="form-grid">
+                    <input type="text" name="nom" placeholder="Nom" required>
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="text" name="nin" placeholder="NIN (Numéro National)" required>
+                    <input type="date" name="date_naiss" title="Date de naissance" required>
+
+                    <input type="text" name="p_pere" placeholder="Prénom du père" required>
+                    <input type="text" name="p_g_pere" placeholder="Prénom du grand-père" required>
+                    <input type="text" name="nom_m" placeholder="Nom de la mère" required>
+                    <input type="text" name="p_m" placeholder="Prénom de la mère" required>
+
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="tel" placeholder="Téléphone" required>
+                    <textarea name="adresse" placeholder="Adresse complète" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-signup">S'inscrire</button>
+    <p class="login-link">
+    Déjà un compte ? <a href="login.html">Se connecter</a>
+</p>
+            </form>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

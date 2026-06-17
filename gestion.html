@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tirage - Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard">
+
+<!-- NAVBAR -->
+<nav class="topbar">
+    <div class="logo">⚙️ Admin Panel</div>
+
+    <div class="menu">
+        <a href="admin.html" style="color:white; text-decoration:none;">Dashboard</a>
+        <a href="gestion.html" style="color:white; text-decoration:none;">Tirage</a>
+    </div>
+
+    <div>
+        <a href="index.html" style="color:white;">Déconnexion</a>
+    </div>
+</nav>
+
+<!-- CONTENU -->
+<div class="container">
+
+    <h1>🎯 Gestion du Tirage au Sort</h1>
+
+    <!-- PARAMÈTRES -->
+    <div class="card">
+        <h2>⚙️ Paramétrage</h2>
+
+        <label>Date du tirage :</label><br>
+        <input type="date"><br><br>
+
+        <label>Nombre de gagnants :</label><br>
+        <input type="number" placeholder="Ex: 10"><br><br>
+
+        <label>Début inscriptions :</label><br>
+        <input type="date"><br><br>
+
+        <label>Fin inscriptions :</label><br>
+        <input type="date"><br><br>
+
+        <button>💾 Enregistrer paramètres</button>
+    </div>
+
+    <!-- LANCER TIRAGE -->
+    <div class="card">
+        <h2>🚀 Lancer le tirage</h2>
+        <p>Le tirage ne peut être lancé qu’à la date définie.</p>
+
+        <button style="background: green;">▶ Lancer le tirage</button>
+    </div>
+
+    <!-- RÉSULTATS -->
+    <div class="card">
+        <h2>📊 Résultats du tirage</h2>
+
+        <p>Aucun tirage lancé pour le moment.</p>
+
+        <!-- exemple -->
+        <ul>
+            <li>👤 dounia - Gagnant</li>
+            <li>👤 zahra - Gagnante</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

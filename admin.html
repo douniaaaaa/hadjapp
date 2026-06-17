@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Administrateur</title>
+     <link rel="icon" type="image/x-icon" href="images.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard">
+
+    <nav>
+        <h2>⚙️ Administration</h2>
+        <a href="index.html">Déconnexion</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Gestion utilisateurs -->
+        <div class="card">
+            <h3>👥 Gestion des utilisateurs</h3>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Ahmed</td>
+                    <td>ahmed@email.com</td>
+                    <td>
+                        <button>Valider</button>
+                        <button>Bloquer</button>
+                        <button>Supprimer</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+       <div class="card">
+    <h3>⚙️ Paramétrage du tirage</h3>
+
+    <div class="form-group">
+        <label>Date du tirage :</label>
+        <input type="date">
+    </div>
+
+    <div class="form-group">
+        <label>Nombre de gagnants :</label>
+        <input type="number" placeholder="Ex: 100">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Date début inscription :</label>
+            <input type="date">
+        </div>
+
+        <div class="form-group">
+            <label>Date fin inscription :</label>
+            <input type="date">
+        </div>
+    </div>
+
+    <button class="btn-save">💾 Enregistrer</button>
+</div>
+
+        <!-- Lancer tirage -->
+        <div class="card">
+            <h3>🎯 Lancer le tirage</h3>
+           <button class="danger" onclick="window.location.href='gestion.html'">
+    Lancer le tirage
+</button>
+        </div
+
+        <!-- Résultats -->
+      <div class="card">
+            <h3>📊 Résultats</h3>
+            <p>Liste des gagnants disponible ici</p>
+            <button onclick="window.location.href='voir_resultats.html'">Voir résultats</button>
+        </div>
+
+        <!-- Notifications -->
+        <div class="card">
+            <h3>🔔 Notifications</h3>
+            <button>Envoyer notification</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
